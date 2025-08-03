@@ -1,5 +1,5 @@
 # Sir-5rM8 Fix
-Simple Mod to fix Sir-5rM8 getting stuck by teleporting it to the target.  
+Simple Mod to fix Sir-5rM8 getting stuck. If a Bot is detected as stuck, it will get teleported to it's target location.  
 Additionally, adds options to configure weight reduction and the max radius.  
 Adds functionality to all existing Sir-5rM8 and does not add new ones.  
 Requires Bob's Tall Tales to function.  
@@ -38,6 +38,36 @@ Max: `1.0`
 ```ini
 [BotFix]
 WeightReduction=0.0
+```
+
+### Auto Enable Sorting
+Automatically enables sorting input buttons for all structures near a Sir-5rM8 docking station.  
+This is helpful when mods disable the sorting inputs, but can cause visual issues.
+Default: `False`  
+```ini
+[BotFix]
+AutoEnableSorting=True
+```
+
+### Auto Enable Sorting Timer
+The time in seconds between checks for structures to enable sorting inputs.  
+Default: `900`  
+Min: `60`  
+Max: `86400`  
+```ini
+[BotFix]
+AutoEnableSortingTimer=900
+```
+
+### Auto Enable Sorting Dedicated
+If enabled, will autoconfigure sorting inputs for all nearby dedicated storages (including modded ones like VS).  
+This will flip the dedicated storage between input and output mode every `AutoEnableSortingTimer` seconds.
+Requires `AutoEnableSorting` to be enabled.
+Default: `False`
+```ini
+[BotFix]
+AutoEnableSorting=True
+AutoEnableSortingDedicated=False
 ```
 
 ## Support
